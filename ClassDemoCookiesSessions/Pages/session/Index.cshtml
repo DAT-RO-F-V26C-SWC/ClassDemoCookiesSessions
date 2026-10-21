@@ -1,0 +1,46 @@
+﻿@page
+@model ClassDemoCookiesSessions.Pages.session.IndexModel
+@{
+}
+
+<h1>Dette viser session</h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Navn</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <form method="post">
+        @foreach (var vare in Model.Varer)
+        {
+            <tr>
+                <td>@vare.Id</td>
+                <td>@vare.Name</td>
+                <td>@vare.Price</td>
+                <td>
+                    <input type="submit" asp-route-id="@vare.Id" class="btn btn-primary" value="Tilføj kurv">
+            </td>
+            </tr>
+        }
+        </form>
+    </tbody>
+</table>
+
+<form method="post">
+    <input type="submit" class="btn btn-primary" value="Gå til kurv" asp-page-handler="kurv"/>
+</form>
+
+
+
+
+
+@* <form method="post">
+    Id: <input asp-for="@Model.NewPerson.Id" /><br />
+    Name: <input asp-for="@Model.NewPerson.Name" /><br />
+    Phone: <input asp-for="@Model.NewPerson.Price" /><br />
+    <input type="submit" class="btn btn-primary" value="Gem i session" />
+</form> *@
