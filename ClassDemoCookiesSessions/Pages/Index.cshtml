@@ -5,6 +5,19 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome - log ind</h1>
+    <p>Du skal logge ind på systemet.</p>
+</div>
+<div class="col3">
+    <form method="post">
+        <div class="form-group">
+            <label for="@Model.UserName">Brugernavn</label>
+            <input type="text" class="form-control" asp-for="@Model.UserName" required />
+        </div>
+        <div class="form-group">
+            <label for="@Model.Password">Adgangskode</label>
+            <input type="password" class="form-control" asp-for="@Model.Password" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Log ind</button>
+    </form>
 </div>

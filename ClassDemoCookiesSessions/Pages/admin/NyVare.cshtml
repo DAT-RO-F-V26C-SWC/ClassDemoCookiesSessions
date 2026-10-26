@@ -1,0 +1,22 @@
+﻿@page
+@model ClassDemoCookiesSessions.Pages.admin.NyVareModel
+@{
+}
+
+<h1>Opret Vare</h1>
+
+<form accept-charset="UTF-8" method="post">
+    <div class="form-group">
+        <label for="@Model.Id">Id</label>
+        <input type="number" class="form-control" asp-for="@Model.Id" required />
+    </div>
+    <div class="form-group">
+        <label for="@Model.Navn">Varenavn</label>
+        <input type="text" class="form-control" asp-for="@Model.Navn" required />
+    </div>
+    <div class="form-group">
+        <label for="@Model.Price">Pris</label>
+        <input type="number" class="form-control" asp-for="@Model.Price" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Opret Vare</button>
+</form>
